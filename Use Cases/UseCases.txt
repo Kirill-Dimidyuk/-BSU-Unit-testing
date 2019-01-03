@@ -1,85 +1,85 @@
-1. Выбор города
-	Пользователь нажимает на инпут для выбора города.
-	Из подгрузившегося списка выбирает тот, из которого он отправляется.
-	Из подгрузившегося списка городов для определенной местности выбирает город отправления.
-Выбранный город вставляется в инпут.
+﻿1 testcase
+	
+	Проверка корректности формы для полета в одну сторону
+	Шаги:
+	-Go to https://www.aircaraibes.com/
+	-Select 'one way ticket' checkbox
+	Expected result: 'Date retour' field is 'grayed'.
 
-2. Выбор даты
-	Пользователь нажимает на datepicker.
-	Выдит календарь с двумя месяцами (текущий и следующий).
-	Из календаря стрелками можно поменять месяцы, но не старше, чем текущий, а также ограниченный одним годом вперед.
-	Выбираем нужную нам дату.
-Дата вставляется в инпут.
+2 testcase
+	
+	Проверка отсутствия рейсов в Минск
+	Шаги:
+	-Go to https://www.aircaraibes.com/recherche/p/text/Minsk
+	Expected result: search results amount is equal to zero.
 
-3. Работа с multy city
-	Пользователь нажатием кнопкой "Добавить" он добавит себе полет (максимум 6).
-	Пользователь может удалить полет кнопкой "Удалить" (должно остаться минимум 2).
-	В каждом полете выбрать город отправления, город посещения и дату отправки.
+3 testcase
+	
+	Проверка наличия рейсов в Париж
+	-Go to https://www.aircaraibes.com/recherche/p/text/Paris
+	Expected result: search results amount is greater than 0.
 
-4. Букинг билета
-	Пользователь выбирает вкладку Book Flights.
-	Выбирает способ полета (return, one way, multy city).
-	Выбирает город, из которого будет вылет (use-case 1).
-	Выбирает город, в который летит (use-case 1).
-	Если был выбрын return, то выбирает дату отправления и возврата (use-case 2); если one way, то только отправления (use-case 2);
-если же был выбран multy city, то use-case 3.
-	Выбрать количество билетов для взрослых (1 - 7).
-	Количество детей (0 - 7).
-	Выбрать тип полета (Economy / Business).
-	Нажать на кнопку "Найти".
-Пользователь увидит сообщение о завершении и результаты поиска.
+4 testcase
 
-5. Найти машину
-	Пользователь выбирает страну, где заберет машину.
-	Выбирает город, где заберет машину.
-	Выбирает дату (use case 2).
-	Выбирает время (часы и минуты).
-	Выбирает оставит он машину там же, где и взял или нет.
-	Если выбрано не там, где взял - то пользователь повторяет действия 5.1 - 5.4, но только для места, где он оставит машину.
-	Выбирает город пребывания.
-	Выбирает тип машины (mini, exotic, lusury и т.д.).
-	Нажимает на кнопку "Найти".
-Пользователь видит результаты поиска.
+	Проверка что более 9 человек не могут заказать билеты через данную форму
+	Шаги: 
+	- Go to https://www.aircaraibes.com/mon-compte?destination=reserver-un-vol/billet-prime
+	- Select 'passanger' tab
+	- Input to 'Adults' 9
+	- Press the '^' button
+	Expected result: error occured, assert text.
 
-6. Бронирование отеля
-	Пользователь выбирает страну пребывания.
-	Выбирает город пребывания.
-	Выбирает дату прибытия.
-	Выбирает дату отъезда.
-	Выбирает количество комнат.
-	Выбирает количество взрослых людей.
-	Выбирает количество детей.
-	Нажимаеи на кнопку "Найти".
-Видит результаты поиска.
+5 testcase
 
-7. Просмотр расписания полетов.
-	Пользователь заходит на страницу с расписанием.
-	Выбирает тип полета (one way, return).
-	Из списка выбирает город отправления.
-	Выбирает город прибытия.
-	Выбирает дату отправления.
-	Если был выбран тип return, то дату возврата.
-	Выбирает показывать ли только прямые рейсы или все.
-	Выбирает показывать таблицу с расписанием на неделю или на день.
-	Нажимает на кнопку "Посмотреть расписание".
-Пользователь видит список рейсов для выбраных данных.
+	Проверка невозможности отправить ребенка одного в полет
+	Шаги: 
+	- Go to https://www.aircaraibes.com/mon-compte?destination=reserver-un-vol/billet-prime
+	- Select 'passanger' tab
+	- Input to 'Adults' 0
+	- Input to 'Children' 1
+	Expected result: Error occured, need to assert error message text.
 
-8. Онлайн регистрация на рейс.
-	Пользователь входит на страницу для онлайн регистрации.
-	Вводит номер билета или ссылку на букинг.
-	Вводит свою фамилию.
-	Вводит аэропорт отправки.
-	Нажимает кнопку "Получить".
-Пользователь видит сообщение об успешной регистрации или сообщение об ошибке.
+6 testcase
 
-9. Проверка рейса
-	Пользователь вводит номер рейса.
-	Выбирает дату отправки.
-	Нажимает кнопку "Проверить".
-Видит информацию о рейсе или сообщение об ошибке.
+	Проверка того, что ребенка можно отправить в полёт со взрослым
+	Шаги: 
+	- Go to https://www.aircaraibes.com/mon-compte?destination=reserver-un-vol/billet-prime
+	- Select 'passanger' tab
+	- Input to 'Adults' 1
+	- Input to 'Children' 1
+	Expected result: no error occured.
 
-10. Просмотреть свои бронирования полетов.
-	Пользователь вводит свою фамилию.
-	Вводит ссылку на бронирование.
-	Нажимает кнопку "Получить".
-Видит информацию по введенным данным или информацию об ошибке.
+7 testcase
+
+	Проверка отсутствия возможности ввести дату раньше, чем текущая
+	Шаги:
+	-Go to https://www.aircaraibes.com/
+	-Fill in the booking form
+	-Fill in the 'Date aller' field date that is earlier than the current date
+	-Submit form
+	Expected result: Error occured, need to assert error message text.
+
+8 testcase
+
+	-Go to https://www.aircaraibes.com/
+	-Fill in the booking form
+	-Fill in the 'Date retour'field date that is earlier than the 'Date aller' date
+	-Submit form
+	Expected result: Error occured, need to assert error message text.
+
+9 testcase
+	
+	Проверка корректности заполнения формы
+	Шаги:
+	-Go to https://www.aircaraibes.com/
+	-Click the submit button for booking form
+	Expected result: 4 error messages occured due to the fact that necessary fields are not filed, need to assert error messages text.
+
+10 testcase
+	
+	Проверка того, что место вылета и прибытия отличаются
+	Шаги: 
+	-Go to https://www.aircaraibes.com/
+	-Select in 'Departure' first value(Paris-Orly, for example)
+	-Verify that the 'Arrival' list does not has the same option.
+	Expected result: the 'Arrival' list does not has the specified option.

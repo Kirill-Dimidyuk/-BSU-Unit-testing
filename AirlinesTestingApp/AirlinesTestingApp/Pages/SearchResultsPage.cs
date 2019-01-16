@@ -31,7 +31,8 @@ namespace AirlinesTestingApp.Pages
 
         public void GoToSearchResultsForSpecifiedWord(string word)
         {
-            GoToUrl($"{Url}{word}");
+            String s = String.Format("{0}{1}", Url, word);
+            GoToUrl(s);
         }
 
         public string GetSearchResultsText()

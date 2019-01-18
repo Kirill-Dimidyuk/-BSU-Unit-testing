@@ -11,18 +11,18 @@ namespace AirlinesTestingApp.Pages
     {
         private IWebDriver driver;
         private const string Url = "https://www.aircaraibes.com/";
-        private By advertisementCross = By.ClassName("optanon-alert-box-close");
-        private By oneWayTicketCheckbox = By.Id("departure-only");
-        private By leavingTicketDate = By.Id("edit-b-date-1-booking-0");
-        private By returnTicketDate = By.Id("edit-b-date-2-booking-0");
-        private By returnTicketProximity = By.Id("uniform-edit-date-range-value-2");
-        private By departure = By.Id("edit-b-location-1");
-        private By arrival = By.Id("edit-b-location-2");
-        private By bookingFormSubmitButton = By.Id("edit-submit-booking-home");
-        private By dateClosingCross = By.ClassName("ui-datepicker__close");
-        private By notificationCross = By.ClassName("acc--closeLink");
-        private By errorsMessages = By.ClassName("messages");
-        private List<By> errorsXPaths = new List<By>()
+        By advertisementCross = By.ClassName("optanon-alert-box-close");
+        By oneWayTicketCheckbox = By.Id("departure-only");
+        By leavingTicketDate = By.Id("edit-b-date-1-booking-0");
+        By returnTicketDate = By.Id("edit-b-date-2-booking-0");
+        By returnTicketProximity = By.Id("uniform-edit-date-range-value-2");
+        By departure = By.Id("edit-b-location-1");
+        By arrival = By.Id("edit-b-location-2");
+        By bookingFormSubmitButton = By.Id("edit-submit-booking-home");
+        By dateClosingCross = By.ClassName("ui-datepicker__close");
+        By notificationCross = By.ClassName("acc--closeLink");
+        By errorsMessages = By.ClassName("messages");
+        List<By> errorsXPaths = new List<By>()
         {
             By.XPath("//*[@id='ac-com-booking-amadeus-booking-homepage']/div[2]/ul/li[1]"),
             By.XPath("//*[@id='ac-com-booking-amadeus-booking-homepage']/div[2]/ul/li[2]"),
@@ -64,8 +64,8 @@ namespace AirlinesTestingApp.Pages
 
         public void CloseAds()
         {
-            Thread.Sleep(1000);
             driver.FindElement(advertisementCross).Click();
+            Thread.Sleep(10000);
             driver.FindElement(notificationCross).Click();
         }
 

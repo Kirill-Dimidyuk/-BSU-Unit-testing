@@ -10,20 +10,20 @@ namespace AirlinesTestingApp.Pages
     {
         private IWebDriver driver;
         private const string Url = "https://www.aircaraibes.com/mon-compte?destination=reserver-un-vol/billet-prime";
-        private By passengersInput = By.Id("edit-count-passengers");
-        private By adultsAmountInput = By.Id("edit-passengers-adults");
-        private By adultsButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[1]/button");
-        private By adultsButtonDecrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[2]/button");
-        private By childrenButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[6]/div[2]/ul/li[1]/button");
-        private By errorFormContainer = By.XPath("//*[@id='edit-passengers']/div[2]");
+        By passengersInput = By.Id("edit-count-passengers");
+        By adultsAmountInput = By.Id("edit-passengers-adults");
+        By adultsButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[1]/button");
+        By adultsButtonDecrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[2]/button");
+        By childrenButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[6]/div[2]/ul/li[1]/button");
+        By errorFormContainer = By.XPath("//*[@id='edit-passengers']/div[2]");
 
         public By errorFormMessage = By.XPath("//*[@id='edit-passengers']/div[2]/ul/li");
 
         public string errorPassengersTooManyText = "Pas plus de 9 passagers...";
         public string errorChildrenWithoutAdultsText = "Au moins un adulte ou un senior par bébé...";
 
-        private By advertisementCross = By.ClassName("optanon-alert-box-close");
-        private By notificationCross = By.ClassName("acc--closeLink");
+        By advertisementCross = By.ClassName("optanon-alert-box-close");
+        By notificationCross = By.ClassName("acc--closeLink");
 
 
         public void ClickPassengersInput()
@@ -97,8 +97,8 @@ namespace AirlinesTestingApp.Pages
 
         public void CloseAds()
         {
-            Thread.Sleep(1000);
             driver.FindElement(advertisementCross).Click();
+            Thread.Sleep(10000);
             driver.FindElement(notificationCross).Click();
         }
 

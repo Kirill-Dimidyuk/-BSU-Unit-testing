@@ -9,10 +9,10 @@ namespace AirlinesTestingApp.Pages
     public class SearchResultsPage
     {
         private IWebDriver driver;
-        public const string Url = "https://www.aircaraibes.com/recherche/p/text/";
+        private const string Url = "https://www.aircaraibes.com/recherche/p/text/";
         private const string Results = " RÉSULTATS";
 
-        By searchBoxResults = By.XPath("//*[@id='block-current-search-standard']/div/div/h3[1]");
+        private By searchBoxResults = By.XPath("//*[@id='block-current-search-standard']/div/div/h3[1]");
         
         public SearchResultsPage()
         {

@@ -52,3 +52,4 @@ C:\Users\user\Desktop\-BSU-Unit-testing\AirlinesTestingApp\AirlinesTestingApp\ob
 C:\Users\user\Desktop\-BSU-Unit-testing\AirlinesTestingApp\AirlinesTestingApp\obj\Debug\AirlinesTestingApp.csproj.CopyComplete
 C:\Users\user\Desktop\-BSU-Unit-testing\AirlinesTestingApp\AirlinesTestingApp\obj\Debug\AirlinesTestingApp.dll
 C:\Users\user\Desktop\-BSU-Unit-testing\AirlinesTestingApp\AirlinesTestingApp\obj\Debug\AirlinesTestingApp.pdb
+C:\Users\user\Desktop\-BSU-Unit-testing\AirlinesTestingApp\AirlinesTestingApp\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll

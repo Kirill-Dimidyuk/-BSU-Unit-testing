@@ -13,17 +13,17 @@ namespace AirlinesTestingApp.Pages
         private By passengersInput = By.Id("edit-count-passengers");
         private By adultsAmountInput = By.Id("edit-passengers-adults");
         private By adultsButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[1]/button");
-        By adultsButtonDecrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[2]/button");
-        By childrenButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[6]/div[2]/ul/li[1]/button");
-        By errorFormContainer = By.XPath("//*[@id='edit-passengers']/div[2]");
+        private By adultsButtonDecrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[1]/div[2]/ul/li[2]/button");
+        private By childrenButtonIncrement = By.XPath("//*[@id='edit-passengers']/div[1]/div[6]/div[2]/ul/li[1]/button");
+        private By errorFormContainer = By.XPath("//*[@id='edit-passengers']/div[2]");
 
         public By errorFormMessage = By.XPath("//*[@id='edit-passengers']/div[2]/ul/li");
 
         public string errorPassengersTooManyText = "Pas plus de 9 passagers...";
         public string errorChildrenWithoutAdultsText = "Au moins un adulte ou un senior par bébé...";
 
-        By advertisementCross = By.ClassName("optanon-alert-box-close");
-        By notificationCross = By.ClassName("acc--closeLink");
+        private By advertisementCross = By.ClassName("optanon-alert-box-close");
+        private By notificationCross = By.ClassName("acc--closeLink");
 
 
         public void ClickPassengersInput()

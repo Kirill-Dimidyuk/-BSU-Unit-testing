@@ -25,6 +25,7 @@ namespace AirlinesTestingApp.BaseEntities
         public static void QuitDriver()
         {
             driver.Quit();
+            driver = null;
         }
     }
 }

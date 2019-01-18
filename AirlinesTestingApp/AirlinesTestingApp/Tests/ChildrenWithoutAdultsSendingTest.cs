@@ -24,6 +24,7 @@ namespace AirlinesTestingApp.Tests
         {
             ticketsPage = new TicketsPage();
             ticketsPage.OpenTicketsPage();
+            ticketsPage.CloseAds();
         }
 
         private void _2_SetAdultsAmountEqualToZeroAndChildrenToOne()

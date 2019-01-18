@@ -97,6 +97,7 @@ namespace AirlinesTestingApp.Pages
 
         public void CloseAds()
         {
+            Thread.Sleep(1000);
             driver.FindElement(advertisementCross).Click();
             driver.FindElement(notificationCross).Click();
         }
